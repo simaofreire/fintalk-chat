@@ -1,0 +1,24 @@
+{
+  "default": [
+    "Oi! Como posso ajudar?",
+    "Hmm... interessante.",
+    "Me explique melhor, por favor!",
+    "Boa pergunta! Preciso pensar sobre isso.",
+    "Desculpe, não entendi. Pode reformular?",
+    "Estou aqui para ajudar!",
+    "Vamos resolver isso juntos.",
+    "Pode me dar mais detalhes?",
+    "Entendi. O que mais você gostaria de saber?",
+    "Isso é algo que eu preciso verificar."
+  ],
+  "user1": [
+    "Olá, user1! Como posso ajudar?",
+    "Oi, user1! O que você gostaria de saber?",
+    "Olá, user1! Estou aqui para ajudar!"
+  ],
+  "user2": [
+    "Olá, user2! Como posso ajudar?",
+    "Oi, user2! O que você gostaria de saber?",
+    "Olá, user2! Estou aqui para ajudar!"
+  ]
+}
