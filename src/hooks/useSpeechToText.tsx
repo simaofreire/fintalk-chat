@@ -1,23 +1,13 @@
 'use client';
-import { Actions } from '@/enums/actions-enum';
-import { useSpeechRecognition } from 'react-speech-kit';
-import { useChatbot } from './useChatbot';
+import { SpeechToTextContext } from '@/contexts/speech-context';
+import { useContext } from 'react';
 
-const useSpeechToText = () => {
-  const { dispatch } = useChatbot();
-
-  const { listen, listening, stop, supported } = useSpeechRecognition({
-    onResult: (result) => {
-      dispatch({ type: Actions.SET_INPUT, payload: result.toString() });
-    },
-  });
-
-  return {
-    listening,
-    supported,
-    listen,
-    stop,
-  };
+export const useSpeechToText = () => {
+  const context = useContext(SpeechToTextContext);
+  if (!context) {
+    throw new Error('useSpeechToText must be used within a SpeechProvider');
+  }
+  return context;
 };
 
-export default useSpeechToText;
+

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 
 import { ChatbotProvider } from '@/contexts/chatbot-context';
+import { SpeechToTextProvider } from '@/contexts/speech-context';
 import Header from './_components/header';
 import './globals.css';
 
@@ -33,7 +34,9 @@ export default function RootLayout({
       >
         <Header />
         <div className="flex flex-col items-center justify-start bg-slate-50 dark:bg-[#182A4C] h-[calc(100dvh-6rem)]">
-          <ChatbotProvider>{children}</ChatbotProvider>
+          <ChatbotProvider>
+            <SpeechToTextProvider>{children}</SpeechToTextProvider>
+          </ChatbotProvider>
         </div>
       </body>
     </html>

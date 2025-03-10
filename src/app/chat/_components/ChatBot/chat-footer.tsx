@@ -4,7 +4,8 @@ import { CardFooter } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
 import { Actions } from '@/enums/actions-enum';
 import { useChatbot } from '@/hooks/useChatbot';
-import useSpeechToText from '@/hooks/useSpeechToText';
+
+import { useSpeechToText } from '@/hooks/useSpeechToText';
 import { Send } from 'lucide-react';
 import { useRef } from 'react';
 import { ChatSpeech } from './chat-speech';
@@ -25,8 +26,8 @@ export const ChatFooter = () => {
         onKeyDown={(e) => {
           if (e.key === 'Enter' && !e.shiftKey && !state.loading) {
             e.preventDefault();
-            sendMessage();
             stop();
+            sendMessage();
           }
         }}
         placeholder="Como posso te ajudar?"
@@ -37,10 +38,10 @@ export const ChatFooter = () => {
         type="submit"
         className="bg-zinc-700 cursor-pointer absolute right-10 hover:opacity-80"
         onClick={() => {
-          sendMessage();
           if (listening) {
             stop();
           }
+          sendMessage();
         }}
         disabled={!state.input || state.loading}
         aria-label="Botão para enviar mensagem"

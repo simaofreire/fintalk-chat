@@ -4,7 +4,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import useSpeechToText from '@/hooks/useSpeechToText';
+import { useSpeechToText } from '@/hooks/useSpeechToText';
 import { TooltipProvider } from '@radix-ui/react-tooltip';
 import { Mic, MicOff } from 'lucide-react';
 import { RefObject } from 'react';
@@ -15,6 +15,7 @@ interface ChatSpeechProps {
 
 export const ChatSpeech = ({ textAreaRef }: ChatSpeechProps) => {
   const { listen, listening, stop, supported } = useSpeechToText();
+
   return (
     <TooltipProvider>
       <Tooltip>
@@ -24,13 +25,12 @@ export const ChatSpeech = ({ textAreaRef }: ChatSpeechProps) => {
               !supported ? '!cursor-not-allowed' : ''
             }`}
             onClick={() => {
+              textAreaRef.current?.focus();
               if (listening) {
                 stop();
                 return;
               }
-
               listen({ interimResults: true, lang: 'pt-BR' });
-              textAreaRef.current?.focus();
             }}
             disabled={!supported}
             aria-label="Botão para enviar mensagem"
