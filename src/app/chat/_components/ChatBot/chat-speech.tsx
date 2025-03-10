@@ -20,7 +20,9 @@ export const ChatSpeech = ({ textAreaRef }: ChatSpeechProps) => {
       <Tooltip>
         <TooltipTrigger asChild>
           <Button
-            className="bg-zinc-700 !cursor-pointer absolute right-25 hover:opacity-80"
+            className={`bg-zinc-700 !cursor-pointer absolute right-25 hover:opacity-80 ${
+              !supported ? '!cursor-not-allowed' : ''
+            }`}
             onClick={() => {
               if (listening) {
                 stop();
@@ -40,7 +42,7 @@ export const ChatSpeech = ({ textAreaRef }: ChatSpeechProps) => {
             )}
           </Button>
         </TooltipTrigger>
-        <TooltipContent>
+        <TooltipContent className={`${!supported ? 'bg-red-500' : ''}`}>
           {supported
             ? listening
               ? 'Clique para deixar mudo'
