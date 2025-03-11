@@ -31,6 +31,7 @@ export default function SwitchThemeBtn() {
       className={`relative inline-block w-8 align-middle select-none transition duration-300 ease-in border-solid rounded-full border-2 border-zinc-500 ${
         theme === 'light' ? 'bg-zinc-700' : 'bg-white'
       }`}
+      data-testid="switch-theme-btn"
     >
       <span
         className={`block h-3 w-3 rounded-full shadow-inner transform transition ${

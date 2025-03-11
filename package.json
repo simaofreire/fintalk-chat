@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cypress:open": "cypress open --config baseUrl=http://localhost:3000/"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.3",
@@ -32,6 +33,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/react-speech-kit": "^3.0.0",
+    "cypress": "^14.1.0",
     "eslint": "^9",
     "eslint-config-next": "15.2.1",
     "typescript": "^5"

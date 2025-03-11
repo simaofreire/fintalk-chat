@@ -18,6 +18,7 @@ export const ChatFooter = () => {
   return (
     <CardFooter className="space-x-2 relative">
       <Textarea
+        data-testid="chat-input"
         ref={textAreaRef}
         value={state.input}
         onChange={(e) =>
@@ -35,6 +36,7 @@ export const ChatFooter = () => {
         aria-label="Campo de texto para enviar mensagem"
       />
       <Button
+        data-testid="send-message-button"
         type="submit"
         className="bg-zinc-700 cursor-pointer absolute right-10 hover:opacity-80"
         onClick={() => {

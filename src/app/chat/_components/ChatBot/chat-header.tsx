@@ -17,6 +17,7 @@ export const ChatHeader = () => {
       </CardTitle>
       <DialogTrigger asChild>
         <Button
+          data-testid="chat-settings-button"
           onClick={() =>
             dispatch({
               type: Actions.SET_CHAT_SETTINGS_OPEN,

@@ -27,6 +27,7 @@ export const ChatSettings = () => {
           Nome do Chatbot
         </span>
         <Input
+          data-testid="chatbot-name-input"
           value={state.chatSettings.botName}
           onChange={(e) =>
             dispatch({
@@ -46,6 +47,7 @@ export const ChatSettings = () => {
         </span>
         <div className="flex gap-3">
           <Button
+            data-testid="chat-settings-user-green-btn"
             className={`bg-green-100  ${
               state.chatSettings.userMessageBg === 'bg-green-100 text-green-700'
                 ? 'border-2 border-green-500'
@@ -59,6 +61,7 @@ export const ChatSettings = () => {
             }
           />
           <Button
+            data-testid="chat-settings-user-slate-btn"
             className={`bg-slate-100  ${
               state.chatSettings.userMessageBg === 'bg-slate-100 text-slate-700'
                 ? 'border-2 border-slate-500'
@@ -93,6 +96,7 @@ export const ChatSettings = () => {
         </span>
         <div className="flex gap-3">
           <Button
+            data-testid="chat-settings-bot-green-btn"
             className={`bg-green-100  ${
               state.chatSettings.botMessageBg === 'bg-green-100 text-green-700'
                 ? 'border-2 border-green-700'
@@ -106,6 +110,7 @@ export const ChatSettings = () => {
             }
           />
           <Button
+            data-testid="chat-settings-bot-slate-btn"
             className={`bg-slate-100  ${
               state.chatSettings.botMessageBg === 'bg-slate-100 text-slate-700'
                 ? 'border-2 border-slate-500'

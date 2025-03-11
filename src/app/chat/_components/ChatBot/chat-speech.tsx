@@ -21,6 +21,7 @@ export const ChatSpeech = ({ textAreaRef }: ChatSpeechProps) => {
       <Tooltip>
         <TooltipTrigger asChild>
           <Button
+            data-testid="speech-button"
             className={`bg-zinc-700 !cursor-pointer absolute right-25 hover:opacity-80 ${
               !supported ? '!cursor-not-allowed' : ''
             }`}
@@ -36,9 +37,9 @@ export const ChatSpeech = ({ textAreaRef }: ChatSpeechProps) => {
             aria-label="Botão para enviar mensagem"
           >
             {listening ? (
-              <Mic className="text-white" />
+              <Mic className="text-white" data-testid="mic-open-icon" />
             ) : (
-              <MicOff className="text-white" />
+              <MicOff className="text-white" data-testid="mic-muted-icon" />
             )}
           </Button>
         </TooltipTrigger>

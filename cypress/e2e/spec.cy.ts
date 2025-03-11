@@ -1,0 +1,32 @@
+describe('aplication test', () => {
+  it('should click the chat-bot link', () => {
+    cy.visit('/home');
+    cy.get('[data-testid="switch-theme-btn"]').click();
+    cy.get('[data-testid="chatbot-link"]').click();
+    cy.url().should('include', '/chat');
+    cy.wait(1000);
+    cy.get('[data-testid="switch-theme-btn"]').click();
+    cy.get('[data-testid="chat-input"]').type('Oi, tudo bem?');
+    cy.get('[data-testid="send-message-button"]').click();
+    cy.wait(1000);
+    cy.get('[data-testid="chat-input"]').type('Sim, e você?');
+    cy.get('[data-testid="send-message-button"]').click();
+    cy.wait(1000);
+    cy.get('[data-testid="chat-input"]').type('Estou bem também!');
+    cy.get('[data-testid="send-message-button"]').click();
+    cy.wait(1000);
+    cy.get('[data-testid="speech-button"]').click();
+    cy.get('[data-testid="mic-open-icon"]').should('exist');
+    cy.get('[data-testid="mic-muted-icon"]').should('not.exist');
+    cy.wait(1000);
+    cy.get('[data-testid="speech-button"]').click();
+    cy.get('[data-testid="mic-open-icon"]').should('not.exist');
+    cy.get('[data-testid="mic-muted-icon"]').should('exist');
+    cy.get('[data-testid="chat-settings-button"]').click();
+    cy.get('[data-testid="chatbot-name-input"]').type('Chatbot do Teste');
+    cy.get('[data-testid="chat-settings-user-green-btn"]').click();
+    cy.get('[data-testid="chat-settings-bot-slate-btn"]').click();
+    cy.wait(1000);
+    cy.get('body').type('{esc}');
+  });
+});
